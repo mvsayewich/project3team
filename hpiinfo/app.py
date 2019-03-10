@@ -8,10 +8,10 @@ from sqlalchemy import create_engine
 from collections import defaultdict
 
 #create an engine and create the reference for table in output.sqlite through ORM
-engine=create_engine("sqlite:///db/output.db")
-result=engine.execute("select* from Real_Estate").fetchall()
+#engine=create_engine("sqlite:///db/output.db")
+#result=engine.execute("select* from Real_Estate").fetchall()
 
-app=Flask(__name__,template_folder='templates')
+app=Flask(__name__)
 
 @app.route("/templates/index.html")
 @app.route("/")
@@ -35,7 +35,7 @@ def geo_data():
 @app.route("/ontdata")
 def ont_data():
     return render_template("ontdata.html")
-
+"""
 @app.route("/city")
 def city_list():
     city_name=[]
@@ -91,7 +91,7 @@ def all_city_info():
         metadata_allcity["Apartment_Benchmark"]=int(i.Apartment_Benchmark)
         city_info.append(metadata_allcity)       
     return jsonify(city_info)
-
+"""
 if __name__=="__main__":
     app.run(debug=True)
 
