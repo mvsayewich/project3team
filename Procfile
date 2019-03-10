@@ -1,1 +1,1 @@
-web: gunicorn:hpiinfo.app:app
+web: gunicorn:hpiinfo:app
