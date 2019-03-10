@@ -11,7 +11,7 @@ from collections import defaultdict
 engine=create_engine("sqlite:///db/output.db")
 result=engine.execute("select* from Real_Estate").fetchall()
 
-app=Flask(__name__)
+app=Flask(__name__,template_folder='templates')
 
 @app.route("/templates/index.html")
 @app.route("/")
