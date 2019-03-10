@@ -13,10 +13,10 @@ result=engine.execute("select* from Real_Estate").fetchall()
 
 app=Flask(__name__)
 
-@app.route("/templates/main.html")
+@app.route("/templates/index.html")
 @app.route("/")
 def home_page():
-    return render_template("main.html")
+    return render_template("index.html")
 
 @app.route("/templates/hpidata.html")
 @app.route("/hpidata.html")
