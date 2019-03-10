@@ -2,9 +2,9 @@
 #import modules
 from flask import Flask, render_template,jsonify
 #from flask_sqlalchemy import SQLAlchemy
-import pandas as pd
-import sqlalchemy
-from sqlalchemy import create_engine
+#import pandas as pd
+#import sqlalchemy
+#from sqlalchemy import create_engine
 from collections import defaultdict
 
 #create an engine and create the reference for table in output.sqlite through ORM
@@ -13,10 +13,10 @@ from collections import defaultdict
 
 app=Flask(__name__)
 
-@app.route("/templates/index.html")
+@app.route("/templates/main.html")
 @app.route("/")
 def home_page():
-    return render_template("index.html")
+    return render_template("main.html")
 
 @app.route("/templates/hpidata.html")
 @app.route("/hpidata.html")
