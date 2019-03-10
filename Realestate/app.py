@@ -8,8 +8,9 @@ from sqlalchemy import create_engine
 from collections import defaultdict
 
 #create an engine and create the reference for table in output.sqlite through ORM
-engine=create_engine("sqlite:///db/output.db")
-result=engine.execute("select* from Real_Estate").fetchall()
+engine=create_engine("postgresql://postgres:123456@localhost/project3")
+con=engine.connect()
+result=engine.execute("select* from realestate").fetchall()
 
 app=Flask(__name__)
 
