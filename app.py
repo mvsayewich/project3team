@@ -12,27 +12,23 @@ con=engine.connect()
 result=engine.execute("select* from realestate").fetchall()
 
 app=Flask(__name__)
-
-@app.route("/templates/main.html")
+@app.route("/index.html")
 @app.route("/")
 def home_page():
-    return render_template("main.html")
+    return render_template("index.html")
 
-@app.route("/templates/hpidata.html")
+
 @app.route("/hpidata.html")
-@app.route("/hpidata")
 def hpi_data():
     return render_template("hpidata.html")
 
-@app.route("/templates/geodata.html")
+
 @app.route("/geodata.html")
-@app.route("/geodata")
 def geo_data():
     return render_template("geodata.html")
 
-@app.route("/templates/ontdata.html")
+
 @app.route("/ontdata.html")
-@app.route("/ontdata")
 def ont_data():
     return render_template("ontdata.html")
 
